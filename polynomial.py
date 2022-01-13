@@ -1,4 +1,5 @@
 from cmath import sqrt
+import math
 import matplotlib.pyplot as plt  # type:ignore
 
 
@@ -62,7 +63,10 @@ class Poly2:
         Si: x prend pour valeur 5
         Alors: y = 5^2 + 1 = 26
         """
-        pass
+
+        y = self.coeffs[0]*math.pow(x, 2) + self.coeffs[1]*x + self.coeffs[2]
+
+        return y
 
     def draw(self, x_points=None):
         """ Méthode qui trace la courbe, voir fichier png."""
