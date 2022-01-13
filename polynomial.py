@@ -36,7 +36,21 @@ class Poly2:
         Si: p1 = Poly(3, -4, 2)
         Alors print(p1) affiche: '2X^2 - 4X + 3'
         """
-        pass
+
+        coeffa = self.coeffs[0]
+        coeffb = self.coeffs[1]
+        coeffc = self.coeffs[2]
+        
+        coeffa_sign = " - "  if coeffa < 0  else " + "
+        coeffb_sign = " - "  if coeffb < 0  else " + "
+        coeffc_sign = " - "  if coeffc < 0  else " + "
+
+        """
+        Si: p1 = Poly(3, -4, 2)
+        Alors print(p1) affiche: '2X^2 - 4X + 3'
+        Je remarque que l'ordre des coeffs est inverse sur le print 🤔
+        """
+        return coeffc +"x^2 " + coeffb_sign + " " + abs(coeffb) +"x " + coeffa_sign + " " + abs(coeffa)
 
     def solve(self):
         """ Méthode qui renvoie les solutions si elles existent."""
