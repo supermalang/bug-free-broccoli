@@ -8,11 +8,15 @@ class Poly2:
     def __init__(self, *coeffs):
         """ Méthode constructeur qui prend en paramètre, les coefficients du polynôme"""
         self.coeffs = coeffs
-        pass
 
     def __add__(self, other):
         """Addition 2 polynômes et qui renvoi du nouveau polynôme"""
-        pass
+        assert isinstance(other, Poly2)
+        coeffa = self.coeffs[0] + other.coeffs[0]
+        coeffb = self.coeffs[1] + other.coeffs[1]
+        coeffc = self.coeffs[2] + other.coeffs[2]
+        return coeffa +"x^2" + coeffb +"x" + coeffc
+
 
     def __sub__(self, other):
         """Soustraction de 2 polynômes et renvoi du nouveau polynôme"""
