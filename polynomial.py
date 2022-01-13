@@ -7,6 +7,7 @@ class Poly2:
 
     def __init__(self, *coeffs):
         """ Méthode constructeur qui prend en paramètre, les coefficients du polynôme"""
+        self.coeffs = coeffs
         pass
 
     def __add__(self, other):
