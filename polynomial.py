@@ -15,12 +15,17 @@ class Poly2:
         coeffa = self.coeffs[0] + other.coeffs[0]
         coeffb = self.coeffs[1] + other.coeffs[1]
         coeffc = self.coeffs[2] + other.coeffs[2]
-        return coeffa +"x^2" + coeffb +"x" + coeffc
+        return coeffa +"x^2 + " + coeffb +"x +" + coeffc
 
 
     def __sub__(self, other):
         """Soustraction de 2 polynômes et renvoi du nouveau polynôme"""
-        pass
+        assert isinstance(other, Poly2)
+        coeffa = self.coeffs[0] - other.coeffs[0]
+        coeffb = self.coeffs[1] - other.coeffs[1]
+        coeffc = self.coeffs[2] - other.coeffs[2]
+        
+        return coeffa +"x^2 + " + coeffb +"x +" + coeffc
 
     def __repr__(self):
         msg = 'Poly2(' + ', '.join([str(c) for c in sorted(self.coeffs.values())]) + ')'
